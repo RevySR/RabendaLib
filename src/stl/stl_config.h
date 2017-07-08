@@ -8,6 +8,7 @@
 #include <cstddef>
 #include <cstring>
 using std::memcmp;
+using std::memmove;
 #else
 using ptrdiff_t = int;
 using size_t = unsigned;
