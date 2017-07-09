@@ -1,7 +1,7 @@
 #ifndef RABENDALIB_STL_PAIR
 #define RABENDALIB_STL_PAIR
 
-#include "stl_config.h"
+#include "stl_config.hpp"
 NAMESPACE_BEGIN(stl)
 template<class T1, class T2>
 struct pair

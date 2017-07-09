@@ -1,7 +1,12 @@
 set(HEADER_FILES
-	stl_algobase.h
-	stl_config.h
-	stl_function.h
-	stl_iterator.h
-	stl_numeric.h
-	stl_pair.h)
+		concept_checks.hpp
+		stl_algobase.hpp
+		stl_config.hpp
+		stl_construct.hpp
+		stl_function.hpp
+		stl_iterator.hpp
+		stl_iterator_base.hpp
+		stl_numeric.hpp
+		stl_pair.hpp
+		stl_uninitialized.hpp
+		type_traits.hpp)

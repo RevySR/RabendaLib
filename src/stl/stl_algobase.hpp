@@ -1,9 +1,10 @@
 #ifndef RABENDALIB_STL_ALGOBASE
 #define RABENDALIB_STL_ALGOBASE
-#include "stl_config.h"
-#include "stl_iterator.h"
-#include "stl_pair.h"
-#include "type_traits.h"
+
+#include "stl_config.hpp"
+#include "stl_iterator_base.hpp"
+#include "stl_pair.hpp"
+#include "type_traits.hpp"
 NAMESPACE_BEGIN(stl)
 
 template<class InputIterator1, class InputIterator2>
@@ -48,7 +49,7 @@ OutputIterator fill_n(OutputIterator first, Size n, const T& value)
 template<class ForwardIterator1, class ForwardIterator2>
 inline void iter_swap(ForwardIterator1 a, ForwardIterator2 b)
 {
-	__iter_swap(a, b, value_type(a));
+	__iter_swap(a, b, __VALUE_TYPE(a));
 }
 
 template<class ForwardIterator1, class ForwardIterator2, class T>

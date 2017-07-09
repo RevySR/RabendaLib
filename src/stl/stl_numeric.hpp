@@ -1,9 +1,9 @@
 #ifndef RABENDALIB_STL_NUMERIC
 #define RABENDALIB_STL_NUMERIC
 
-#include "stl_config.h"
-#include "stl_iterator.h"
-#include "stl_function.h"
+#include "stl_config.hpp"
+#include "stl_iterator.hpp"
+#include "stl_function.hpp"
 NAMESPACE_BEGIN(stl)
 
 template<class InputIterator, class T>

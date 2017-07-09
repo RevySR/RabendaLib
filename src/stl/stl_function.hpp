@@ -1,7 +1,7 @@
 #ifndef RABENDALIB_STL_FUNCTION
 #define RABENDALIB_STL_FUNCTION
 
-#include "stl_config.h"
+#include "stl_config.hpp"
 NAMESPACE_BEGIN(stl)
 
 template<class Arg, class Result>
