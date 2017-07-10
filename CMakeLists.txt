@@ -3,5 +3,6 @@ project(RabendaLib)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp src/stl/stl_uninitialized.hpp)
+set(SOURCE_FILES main.cpp)
+
 add_executable(RabendaLib ${SOURCE_FILES})

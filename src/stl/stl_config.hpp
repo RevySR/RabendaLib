@@ -9,9 +9,13 @@
 
 #include <cstddef>
 #include <cstring>
-
+#include <new>
+#include <iostream>
 using std::memcmp;
 using std::memmove;
+using std::set_new_handler;
+using std::cerr;
+using std::endl;
 #else
 using ptrdiff_t = int;
 using size_t = unsigned;
