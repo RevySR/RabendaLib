@@ -7,14 +7,20 @@ addons:
       - ubuntu-toolchain-r-test
       - llvm-toolchain-precise-3.6
       - kalakris-cmake
+      - h-rayflood/llvm
     packages:
       - gcc-7
       - g++-7
+      - clang
       - cmake
 env: 
-compiler: gcc
+compiler:
+  - gcc
+  - clang
 install:
   - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 --slave /usr/bin/g++ g++ /usr/bin/g++-7
+  - sudo apt install llvm
+  - sudo apt install cmake
 script:
   - cmake .
   - make
