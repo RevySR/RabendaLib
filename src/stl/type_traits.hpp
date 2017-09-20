@@ -159,7 +159,8 @@ NAMESPACE_BEGIN(stl)
 	template<class Type, Type value>
 	struct integral_constant {
 		using value_type = Type;
-		using type = integral_constant<Type, value>;
+		using type = integral_constant<Type,
+			value>;
 		static constexpr const value_type value = value;
 		
 		constexpr operator value_type() { return value; }
@@ -167,7 +168,8 @@ NAMESPACE_BEGIN(stl)
 		constexpr value_type operator()() { return value; }
 	};
 	
-	using true_type = integral_constant<bool, true>;
+	using true_type = integral_constant<bool,
+		true>;
 	using false_type = integral_constant<bool false>;
 
 
@@ -178,19 +180,27 @@ NAMESPACE_BEGIN(stl)
 	};
 	
 	template<typename T, typename U>
-	struct conditional<false, T, U> {
+	struct conditional<false,
+		T,
+		U> {
 		using type = U;
 	};
 	
 	template<bool flag, typename T, typename U>
-	using conditional_t = typename conditional<flag, T, U>::type;
+	using conditional_t = typename conditional<flag,
+		T,
+		U>::type;
 
 //! Select Bool
 	template<bool flag, bool T, bool U>
-	struct t_if : public integral_constant<bool, T> {
+	struct t_if : public integral_constant<bool,
+		T> {
 	};
 	template<bool T, bool U>
-	struct t_if<false, T, U> : public integral_constant<bool, U> {
+	struct t_if<false,
+		T,
+		U> : public integral_constant<bool,
+		U> {
 	};
 
 //! SFINAE
@@ -198,11 +208,13 @@ NAMESPACE_BEGIN(stl)
 	struct enable_if {
 	};
 	template<typename T>
-	struct enable_if<true, T> {
+	struct enable_if<true,
+		T> {
 		using type = T;
 	};
 	
-	template<bool flag, typename T> using enable_if_t = typename enable_if<flag, T>::type;
+	template<bool flag, typename T> using enable_if_t = typename enable_if<flag,
+		T>::type;
 
 
 //! traits
@@ -264,5 +276,47 @@ NAMESPACE_BEGIN(stl)
 		using type = add_const_t<add_volatile_t<T>>;
 	};
 	template<typename T> using add_cv_t = typename add_cv<T>::type;
+	
+	
+	template<typename T> struct remove_reference {
+		using type = T;
+	};
+	template<typename T> struct remove_reference<T &> {
+		using type = T;
+	};
+	template<typename T> struct remove_reference<T &&> {
+		using type = T;
+	};
+	template<typename T> using remove_reference_t = typename remove_reference<T>::type;
+	
+	template<typename T> struct remove_pointer {
+		using type = T;
+	};
+	template<typename T> struct remove_pointer<T *> {
+		using type = T;
+	};
+	template<typename T> using remove_pointer_t = typename remove_pointer<T>::type;
+	
+	template<typename T> struct add_pointer {
+		using type = T *
+	};
+	template<typename T> struct add_pointer<T *> {
+		using type = T *
+	};
+	template<typename T> using add_pointer_t = typename add_pointer<T>::type;
+	
+	template<typename T> struct remove_extent {
+		using type = T;
+	};
+	template<typename T> struct remove_extent<T[]> {
+		using type = T;
+	};
+	template<typename T, size_t N> struct remove_extent<T[N]> {
+		using type = T;
+	};
+	
+	template<typename T> using remove_extent_t = typename remove_extent<T>::type;
+
+
 NAMESPACE_END(stl)
 #endif
