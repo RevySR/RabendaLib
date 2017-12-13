@@ -6,7 +6,7 @@
 #define RABENDALIB_SHOW_HPP
 
 
-#include "../config.h"
+#include "config.hpp"
 #include <sstream>
 #include <type_traits>
 

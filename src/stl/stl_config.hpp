@@ -1,7 +1,7 @@
 #ifndef RABENDALIB_STL_CONFIG
 #define RABENDALIB_STL_CONFIG
 
-#include "../config.h"
+#include "config.hpp"
 
 #define PURE_STL
 

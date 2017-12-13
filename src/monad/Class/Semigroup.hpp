@@ -5,7 +5,7 @@
 #ifndef RABENDALIB_SEMIGROUP_HPP
 #define RABENDALIB_SEMIGROUP_HPP
 
-#include "../config.h"
+#include "config.hpp"
 
 NAMESPACE_BEGIN(MONAD)
 	

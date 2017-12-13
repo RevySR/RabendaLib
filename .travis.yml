@@ -13,7 +13,8 @@ addons:
       - clang
 env: 
 global:
-   - CMAKE_VERSION="3.9.1"
+   - CMAKE_VERSION="3.9.2"
+   - CMAKE_URL="https://cmake.org/files/v3.9/cmake-3.9.2-Linux-x86_64.tar.gz"
 compiler:
   - gcc
   - clang
@@ -21,7 +22,13 @@ compiler:
 install:
   - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 --slave /usr/bin/g++ g++ /usr/bin/g++-7
   - sudo apt install llvm
-  - sudo apt install cmake
+
+before_script:
+  - mkdir cmake && travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C cmake
+  - export PATH=${DEPS_DIR}/cmake/bin:${PATH}
+  - mkdir build
+  - cd build
+  - cmake ..
 script:
-  - cmake .
+  - pwd
   - make

@@ -6,7 +6,7 @@
 #define RABENDALIB_FUNCTOR_HPP
 
 
-#include "../config.h"
+#include "config.hpp"
 #include <utility>
 
 NAMESPACE_BEGIN(MONAD)

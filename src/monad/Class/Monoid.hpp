@@ -5,7 +5,7 @@
 #ifndef RABENDALIB_MONOID_HPP
 #define RABENDALIB_MONOID_HPP
 
-#include "../config.h"
+#include "config.hpp"
 
 
 NAMESPACE_BEGIN(MONAD)

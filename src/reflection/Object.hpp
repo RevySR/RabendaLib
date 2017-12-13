@@ -1,7 +1,7 @@
 #ifndef RABENDALIB_REFLECTION_OBJECT
 #define RABENDALIB_REFLECTION_OBJECT
 
-#include "../config.h"
+#include "config.hpp"
 #include "../basic/RString.hpp"
 
 NAMESPACE_BEGIN(reflection)

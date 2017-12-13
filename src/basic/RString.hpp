@@ -1,7 +1,7 @@
 #ifndef RABENDALIB_BASIC_RSTRING
 #define RABENDALIB_BASIC_RSTRING
 
-#include "../config.h"
+#include "config.hpp"
 #include <exception>
 #include <stdexcept>
 
