@@ -1,5 +1,5 @@
 language: cpp
-sudo: required
+sudo: true
 dist: trusty
 group: deprecated-2017Q4
 addons:
@@ -27,10 +27,6 @@ install:
       export PATH=${DEPS_DIR}/cmake/bin:${PATH}
     fi
 
-before_script:
-  - mkdir build
-  - cd build
-  - cmake ..
 script:
-  - pwd
+  - cmake .
   - make
