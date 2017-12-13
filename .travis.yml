@@ -12,9 +12,6 @@ addons:
       - g++-7
       - clang
 env: 
-global:
-   - CMAKE_VERSION="3.10.0"
-   - CMAKE_URL="https://cmake.org/files/v3.10/cmake-3.10.0-Linux-x86_64.tar.gz"
 compiler:
   - gcc
   - clang
@@ -24,6 +21,7 @@ install:
   - sudo apt install llvm
 
 before_script:
+  - CMAKE_URL="https://cmake.org/files/v3.10/cmake-3.10.0-Linux-x86_64.tar.gz"
   - mkdir cmake && travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C cmake
   - export PATH=${DEPS_DIR}/cmake/bin:${PATH}
   - mkdir build
