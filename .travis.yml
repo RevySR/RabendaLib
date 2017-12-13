@@ -7,7 +7,6 @@ addons:
     sources:
       - llvm-toolchain-trusty-5.0
       - ubuntu-toolchain-r-test
-      - kalakris-cmake
     packages:
       - gcc-7
       - g++-7
