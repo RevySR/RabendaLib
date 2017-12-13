@@ -4,8 +4,8 @@ dist: trusty
 addons:
   apt:
     sources:
+      - llvm-toolchain-trusty-5.0
       - ubuntu-toolchain-r-test
-      - llvm-toolchain-precise-3.6
       - kalakris-cmake
       - h-rayflood/llvm
     packages:
