@@ -8,7 +8,6 @@ addons:
       - llvm-toolchain-trusty-5.0
       - ubuntu-toolchain-r-test
       - kalakris-cmake
-      - h-rayflood/llvm
     packages:
       - gcc-7
       - g++-7
