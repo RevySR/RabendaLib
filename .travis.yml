@@ -11,11 +11,13 @@ addons:
       - gcc-7
       - g++-7
       - clang
-      - cmake
 env: 
+global:
+   - CMAKE_VERSION="3.9.1"
 compiler:
   - gcc
   - clang
+  
 install:
   - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 --slave /usr/bin/g++ g++ /usr/bin/g++-7
   - sudo apt install llvm
