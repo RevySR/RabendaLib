@@ -1,10 +1,29 @@
-cmake_minimum_required(VERSION 3.9)
-project(RabendaLib)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.12)
+PROJECT(rabendalib)
 
-set(CMAKE_CXX_STANDARD 17)
+SET(CMAKE_CXX_STANDARD 17)
+MESSAGE(STATUS "Operation system is ${CMAKE_SYSTEM}")
+MESSAGE(STATUS "Cmake version is ${CMAKE_VERSION}")
+MESSAGE(STATUS "CC is ${CMAKE_CXX_COMPILER}")
 
-set(SOURCE_FILES main.cpp)
+SET(CMAKE_CXX_FLAGS "-O2")
 
-include_directories(src)
+INCLUDE_DIRECTORIES(
+	src/include/
+	SYSTEM
+)
 
-add_executable(RabendaLib ${SOURCE_FILES})
+LINK_DIRECTORIES(
+	${PROJECT_BINARY_DIR}/lib
+	SYSTEM
+)
+
+ADD_SUBDIRECTORY(
+	src
+)
+
+SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+SET(LIBRARY_OUTPUT_PATH "${PROJECT_BINARY_DIR}/lib")
+#AUX_SOURCE_DIRECTORY(${PROJECT_SOURCE_DIR}/src/ rabendaLibSrc)
+#AUX_SOURCE_DIRECTORY(src/include/rabenda rabendaLibSrc)
+#ADD_LIBRARY(rabendalib SHARED ${rabendaLibSrc} src/empty.cpp)

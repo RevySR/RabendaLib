@@ -5,24 +5,24 @@ group: deprecated-2017Q4
 addons:
   apt:
     sources:
-      - llvm-toolchain-trusty-5.0
-      - ubuntu-toolchain-r-test
+    - llvm-toolchain-trusty-6.0
+    - ubuntu-toolchain-r-test
     packages:
-      - gcc-7
-      - g++-7
-      - clang-5.0
+    - gcc-8
+    - g++-8
+    - clang-6.0
 env: 
 compiler:
   - gcc
   - clang
   
 install:
-  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 --slave /usr/bin/g++ g++ /usr/bin/g++-7
+  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-8
   - sudo apt install llvm
   - |
     if [[ ${TRAVIS_OS_NAME} == "linux" ]]; then
       DEPS_DIR=${TRAVIS_BUILD_DIR}/deps
-      CMAKE_URL="https://cmake.org/files/v3.10/cmake-3.10.0-Linux-x86_64.tar.gz"
+      CMAKE_URL="https://cmake.org/files/v3.12/cmake-3.12.0-Linux-x86_64.tar.gz"
       mkdir -p ${DEPS_DIR}/cmake
       travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C ${DEPS_DIR}/cmake
       export PATH=${DEPS_DIR}/cmake/bin:${PATH}
