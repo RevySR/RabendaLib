@@ -1,0 +1,8 @@
+//
+// Created by Rabenda on 10/07/2017.
+//
+
+#ifndef RABENDALIB_STL_ALLOC_HPP
+#define RABENDALIB_STL_ALLOC_HPP
+
+#endif //RABENDALIB_STL_ALLOC_HPP

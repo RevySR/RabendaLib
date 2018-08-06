@@ -1,5 +1,5 @@
-#ifndef RABENDALIB_CONFIG
-#define RABENDALIB_CONFIG
+#ifndef RABENDALIB_COMMON
+#define RABENDALIB_COMMON
 
 #define STR(str) #str
 
