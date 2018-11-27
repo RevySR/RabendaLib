@@ -5,7 +5,6 @@
 #include <exception>
 #include <stdexcept>
 #include <rabenda/lib_common.hpp>
-
 NAMESPACE_BEGIN(basic)
 
 template<typename CharT = char>

@@ -5,7 +5,7 @@ INCLUDE_DIRECTORIES(
 
 SET(SOURCE_FILES
 	include/rabenda/lib_common.hpp
-	include/rabenda/basic/RString.hpp
+		include/rabenda/basic/RString.hpp
 	include/rabenda/monad/Class/Applicative.hpp
 	include/rabenda/monad/Class/Apply.hpp
 	include/rabenda/monad/Class/Bind.hpp
@@ -15,7 +15,7 @@ SET(SOURCE_FILES
 	include/rabenda/monad/Class/Semigroup.hpp
 	include/rabenda/monad/Class/Show.hpp
 	include/rabenda/monad/Data/Maybe.hpp
-	include/rabenda/reflection/Object.hpp
+		include/rabenda/reflection/robject.hpp
 	include/rabenda/stl/concept_checks.hpp
 	include/rabenda/stl/defalloc.hpp
 	include/rabenda/stl/stl_algobase.hpp

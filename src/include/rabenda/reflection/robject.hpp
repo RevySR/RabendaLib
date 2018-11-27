@@ -11,15 +11,13 @@ using namespace NAMESPACE_GET(basic);
 struct RObject
 {
 public:
-	RObject();
-	virtual ~RObject();
+	RObject() = default;
+	virtual ~RObject() = default;
 
 	static RString<> GetName() noexcept
 	{
 		return "RObject"_rs;
 	}
-
-
 };
 
 NAMESPACE_END(reflection)
